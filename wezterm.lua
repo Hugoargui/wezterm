@@ -88,6 +88,16 @@ config.show_new_tab_button_in_tab_bar = false
 config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 2000 }
 
 config.keys = {
+
+    {
+        key = 'V',
+        mods = 'CTRL',
+        action = act.PasteFrom 'Clipboard'
+    },
+    {
+        key = 'F11',
+        action = wezterm.action.ToggleFullScreen,
+    },
     -- Ctrl +/-: font size
     { key = "-", mods = "CTRL", action = act.DecreaseFontSize },
     { key = "+", mods = "CTRL", action = act.IncreaseFontSize },
@@ -395,6 +405,8 @@ smart_splits.apply_to_config(config, {
     log_level = 'info',
 })
 --------------------------
-config.default_cwd = "C:/source/ncr-eps"
-config.default_prog = { 'pwsh.exe', '-NoLogo' }
+config.window_close_confirmation = 'NeverPrompt'
+
+--config.default_cwd = "C:/source/ncr-eps"
+--config.default_prog = { 'pwsh.exe', '-NoLogo' }
 return config
